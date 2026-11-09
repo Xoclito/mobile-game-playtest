@@ -1,0 +1,49 @@
+/* Datos de héroes. Extraídos sin modificar valores.
+ * Debe cargarse después de game-basics.js y antes del script principal.
+ */
+
+const HEROES=[
+ {id:'brasa',rar:0,start:1,n:'Brasa',el:'fire',type:'arrow',desc:'Flechas de fuego que rebotan',p1:'flecha',pN:'flechas',ex:'Rebotes',g:'una flecha gigante',dmg:9,rate:1.4,count:1,pierce:2,max:12,hat:2,c:'#d64530'},
+ {id:'ignis',rar:1,n:'Ignis',el:'fire',type:'fireball',desc:'Bolas de fuego que explotan en área',p1:'bola de fuego',pN:'bolas de fuego',ex:'Área',g:'un meteoro',dmg:12,rate:.9,count:1,pierce:0,max:6,hat:1,c:'#f08a2a'},
+ {id:'marea',rar:0,start:1,n:'Marea',el:'water',type:'bubble',desc:'Burbujas que rebotan por todos lados',p1:'burbuja',pN:'burbujas',ex:'Rebotes',g:'una burbuja gigante',dmg:5,rate:1.5,count:2,pierce:3,max:12,hat:0,c:'#3d8fd6'},
+ {id:'glaciar',rar:1,n:'Glaciar',el:'water',type:'wall',desc:'Bloques de hielo que brotan sobre el gusano y lo congelan',p1:'bloque de hielo',pN:'bloques de hielo',ex:'Anchura',g:'un glaciar colosal',dmg:10,rate:.5,count:1,pierce:0,max:4,hat:3,c:'#7cc6e8'},
+ {id:'baya',rar:1,n:'Baya',el:'grass',type:'fruit',desc:'Frutas bomba que caen sobre el gusano',p1:'fruta bomba',pN:'frutas bomba',ex:'Área',g:'una sandía gigante',dmg:14,rate:.8,count:1,pierce:0,max:6,hat:4,c:'#e04a6a'},
+ {id:'espina',rar:0,start:1,n:'Espina',el:'grass',type:'leaf',desc:'Abanico de hojas afiladas que perforan',p1:'hoja',pN:'hojas',ex:'Perforación',g:'una hoja gigante',dmg:5,rate:1.6,count:3,pierce:1,max:12,hat:2,c:'#3c9a3a'},
+ {id:'aurora',rar:0,start:1,n:'Aurora',el:'light',type:'bolt',desc:'Rayos que saltan entre segmentos',p1:'rayo',pN:'rayos',ex:'Cadenas',g:'un rayo divino',dmg:8,rate:1.1,count:1,pierce:1,max:6,hat:3,c:'#e8b820'},
+ {id:'faro',rar:1,n:'Faro',el:'light',type:'beam',desc:'Haz de luz vertical que atraviesa todo',p1:'haz de luz',pN:'haces de luz',ex:'Anchura',g:'un pilar de luz',dmg:10,rate:1,count:1,pierce:0,max:5,hat:0,c:'#f2d45a'},
+ {id:'umbra',rar:1,n:'Umbra',el:'dark',type:'dragon',desc:'Dragones oscuros que persiguen al gusano',p1:'dragón',pN:'dragones',ex:'Perforación',g:'un dragón colosal',dmg:16,rate:.6,count:1,pierce:2,max:6,hat:4,c:'#5a2d8a'},
+ {id:'noctis',rar:0,start:1,n:'Noctis',el:'dark',type:'bat',desc:'Enjambre de murciélagos teledirigidos',p1:'murciélago',pN:'murciélagos',ex:'Perforación',g:'un murciélago gigante',dmg:6,rate:1,count:3,pierce:1,max:12,hat:1,c:'#3a2a55'}
+ ,{id:'chispa',rar:0,n:'Chispa',el:'fire',type:'spark',desc:'Ráfaga rápida de chispas que perforan',p1:'chispa',pN:'chispas',ex:'Perforación',g:'una chispa gigante',dmg:3.5,rate:3,count:1,pierce:0,max:8,hat:1,c:'#f08a2a',sc:1.05},
+ {id:'meteora',rar:1,n:'Meteora',el:'fire',type:'meteor',desc:'Meteoros que caen sobre el segmento más fuerte',p1:'meteoro',pN:'meteoros',ex:'Área',g:'un meteoro colosal',dmg:20,rate:.6,count:1,pierce:0,max:5,hat:3,c:'#c8501e',sc:1.12},
+ {id:'cenizo',rar:2,n:'Cenizo',el:'fire',type:'cloud',desc:'Nubes de ceniza que queman con el tiempo',p1:'nube',pN:'nubes',ex:'Área',g:'una nube colosal',dmg:4,rate:.45,count:1,pierce:0,max:4,hat:4,c:'#6e5a5a',sc:1.12},
+ {id:'fenix',rar:3,n:'Fénix',el:'fire',type:'bird',desc:'Ave de fuego que atraviesa todo y regresa',p1:'ave',pN:'aves',ex:'Tamaño',g:'un fénix colosal',dmg:10,rate:.6,count:1,pierce:0,max:4,hat:3,c:'#f2a21e',sc:1.45,mw:76},
+ {id:'torrente',rar:0,n:'Torrente',el:'water',type:'jet',desc:'Chorro de agua corto y continuo',p1:'chorro',pN:'chorros',ex:'Perforación',g:'un chorro gigante',dmg:3,rate:3.2,count:1,pierce:2,max:6,hat:0,c:'#3d8fd6',sc:1.05},
+ {id:'medusa',rar:1,n:'Medusa',el:'water',type:'jelly',desc:'Medusas que persiguen y ralentizan al gusano',p1:'medusa',pN:'medusas',ex:'Perforación',g:'una medusa gigante',dmg:7,rate:.9,count:2,pierce:1,max:8,hat:4,c:'#9a7fd6',sc:1.3,mw:56},
+ {id:'perla',rar:2,n:'Perla',el:'water',type:'pearl',desc:'Perlas que atraviesan y rebotan en las paredes',p1:'perla',pN:'perlas',ex:'Rebotes',g:'una perla gigante',dmg:8,rate:1.1,count:1,pierce:1,max:6,hat:3,c:'#8ec6e8',sc:1.12},
+ {id:'tsunami',rar:3,n:'Tsunami',el:'water',type:'wave',desc:'Ola que barre todo el ancho y ralentiza',p1:'ola',pN:'olas',ex:'Altura',g:'un tsunami colosal',dmg:16,rate:.35,count:1,pierce:0,max:3,hat:3,c:'#2a64c4',sc:1.45,mw:76}
+ ,{id:'liana',rar:0,n:'Liana',el:'grass',type:'vine',desc:'Látigos de liana que atraviesan varios segmentos',p1:'liana',pN:'lianas',ex:'Perforación',g:'una liana gigante',dmg:4,rate:2.2,count:1,pierce:2,max:6,hat:2,c:'#6ab42a',sc:1.05},
+ {id:'hongo',rar:1,n:'Hongo',el:'grass',type:'spore',desc:'Esporas que dejan una nube de veneno',p1:'espora',pN:'esporas',ex:'Área',g:'un hongo colosal',dmg:12,rate:.7,count:1,pierce:0,max:5,hat:4,c:'#9a3ab4',sc:1.08},
+ {id:'zarza',rar:2,n:'Zarza',el:'grass',type:'thorn',desc:'Espinas que se clavan y hacen sangrar',p1:'espina',pN:'espinas',ex:'Perforación',g:'una zarza colosal',dmg:6,rate:1.2,count:2,pierce:1,max:8,hat:3,c:'#2e8a3a',sc:1.18},
+ {id:'roble',rar:3,n:'Roble',el:'grass',type:'log',desc:'Tronco pesado que rompe armaduras',p1:'tronco',pN:'troncos',ex:'Tamaño',g:'un roble colosal',dmg:24,rate:.45,count:1,pierce:0,max:3,hat:3,c:'#8a5a2a',sc:1.45,mw:76},
+ {id:'prisma',rar:0,n:'Prisma',el:'light',type:'prism',desc:'Rayo cristalino que se divide en tres',p1:'prisma',pN:'prismas',ex:'Perforación',g:'un prisma gigante',dmg:3.5,rate:1.8,count:1,pierce:1,max:4,hat:0,c:'#e8d8f8',sc:1.05},
+ {id:'estrella',rar:1,n:'Estrella',el:'light',type:'star',desc:'Estrellas fugaces que rebotan en diagonal',p1:'estrella',pN:'estrellas',ex:'Rebotes',g:'una estrella gigante',dmg:7,rate:1.4,count:2,pierce:1,max:8,hat:3,c:'#f2c82a',sc:1.1},
+ {id:'halo',rar:2,n:'Halo',el:'light',type:'halo',desc:'Anillos de luz que se expanden',p1:'anillo',pN:'anillos',ex:'Área',g:'un halo colosal',dmg:9,rate:.8,count:1,pierce:0,max:4,hat:3,c:'#f2d45a',sc:1.18},
+ {id:'amanecer',rar:3,n:'Amanecer',el:'light',type:'sun',desc:'Sol ardiente que atraviesa todo',p1:'sol',pN:'soles',ex:'Tamaño',g:'un amanecer colosal',dmg:14,rate:.5,count:1,pierce:0,max:3,hat:3,c:'#f08a1a',sc:1.45,mw:76},
+ {id:'espectro',rar:0,n:'Espectro',el:'dark',type:'ghost',desc:'Fantasmas que atraviesan todo el gusano',p1:'fantasma',pN:'fantasmas',ex:'Cantidad',g:'un espectro gigante',dmg:5,rate:1.5,count:1,pierce:0,max:6,hat:1,c:'#7a5aa8',sc:1.05},
+ {id:'eclipse',rar:2,n:'Eclipse',el:'dark',type:'hole',desc:'Agujero negro que daña y ralentiza al gusano',p1:'agujero negro',pN:'agujeros negros',ex:'Área',g:'un eclipse total',dmg:5,rate:.5,count:1,pierce:0,max:4,hat:3,c:'#4a2a7a',sc:1.18},
+ {id:'guadana',rar:1,n:'Guadaña',el:'dark',type:'scythe',desc:'Cuchillas giratorias que rebotan',p1:'guadaña',pN:'guadañas',ex:'Rebotes',g:'una guadaña colosal',dmg:8,rate:1.1,count:2,pierce:1,max:8,hat:1,c:'#5a2a8a',sc:1.18},
+ {id:'cuervo',rar:3,n:'Cuervo',el:'dark',type:'raven',desc:'Cuervos que persiguen al gusano',p1:'cuervo',pN:'cuervos',ex:'Perforación',g:'un cuervo colosal',dmg:12,rate:.9,count:2,pierce:1,max:8,hat:1,c:'#3a1a5a',sc:1.45,mw:76},
+ {id:'hielo',rar:2,n:'Hielo',el:'water',type:'shard',desc:'Abanico de esquirlas de cristal que ralentizan',p1:'esquirla',pN:'esquirlas',ex:'Perforación',g:'una ventisca de cristal',dmg:5,rate:1,count:1,pierce:1,max:4,hat:3,c:'#8fd8f5',sc:1.12,mw:54},
+ {id:'angel',rar:2,n:'Ángel',el:'light',type:'lance',desc:'Lanza de luz lenta que atraviesa todo',p1:'lanza',pN:'lanzas',ex:'Perforación',g:'una lanza celestial',dmg:20,rate:.6,count:1,pierce:3,max:3,hat:3,c:'#ffd93a',sc:1.12,mw:60},
+ {id:'caballero',rar:1,n:'Caballero',el:'light',type:'blade',desc:'Ondas de espada de corto alcance',p1:'espada',pN:'espadas',ex:'Perforación',g:'una espada gigante',dmg:9,rate:1.2,count:1,pierce:1,max:4,hat:3,c:'#4a78d0',sc:1.05},
+ {id:'bengala',rar:2,n:'Bengala',el:'fire',type:'cluster',desc:'Bomba de racimo que se parte en 3 minibombas',p1:'bomba',pN:'bombas',ex:'Área',g:'una bomba colosal',dmg:10,rate:.7,count:1,pierce:0,max:4,hat:4,c:'#e0432a',sc:1.12,mw:56},
+ {id:'remolino',rar:2,n:'Remolino',el:'water',type:'tornado',desc:'Tornado de agua que sube golpeando una y otra vez',p1:'tornado',pN:'tornados',ex:'Área',g:'un tornado colosal',dmg:3.5,rate:.55,count:1,pierce:0,max:4,hat:3,c:'#2a8ad8',sc:1.12,mw:56},
+ {id:'cardo',rar:2,n:'Cardo',el:'grass',type:'boomerang',desc:'Bumerán de hoja-sierra que golpea al ir y al volver',p1:'bumerán',pN:'bumeranes',ex:'Tamaño',g:'un bumerán gigante',dmg:7,rate:.9,count:1,pierce:0,max:5,hat:2,c:'#5aa82a',sc:1.12,mw:56},
+ {id:'centella',rar:2,n:'Centella',el:'light',type:'chain',desc:'Rayo en cadena que salta entre segmentos',p1:'rayo',pN:'rayos',ex:'Saltos',g:'un relámpago colosal',dmg:7,rate:1,count:1,pierce:1,max:4,hat:1,c:'#f2d02a',sc:1.12,mw:56},
+ {id:'grimoria',rar:2,n:'Grimoria',el:'dark',type:'mine',desc:'Minas de sombra que flotan y estallan al tocar al gusano',p1:'mina',pN:'minas',ex:'Área',g:'una mina colosal',dmg:12,rate:.8,count:2,pierce:0,max:6,hat:4,c:'#7a3ab8',sc:1.12,mw:56},
+ {id:'yunque',rar:1,n:'Yunque',el:'fire',type:'hammer',desc:'Martillo al rojo que rompe armaduras con onda de choque',p1:'martillo',pN:'martillos',ex:'Área',g:'un martillo colosal',dmg:18,rate:.55,count:1,pierce:1,max:4,hat:2,c:'#c8501e',sc:1.08,mw:54},
+ {id:'coral',rar:1,n:'Coral',el:'water',type:'harpoon',desc:'Arpón veloz que atraviesa en línea',p1:'arpón',pN:'arpones',ex:'Perforación',g:'un arpón gigante',dmg:9,rate:1.1,count:1,pierce:3,max:5,hat:0,c:'#e86a8a',sc:1.08,mw:54},
+ {id:'miel',rar:1,n:'Miel',el:'grass',type:'bee',desc:'Abejas que persiguen y pican al gusano',p1:'abeja',pN:'abejas',ex:'Cantidad',g:'una abeja reina',dmg:4,rate:1,count:3,pierce:0,max:9,hat:4,c:'#f2b81e',sc:1.08,mw:54},
+ {id:'marioneta',rar:1,n:'Marioneta',el:'dark',type:'puppet',desc:'Hilos que atraviesan y frenan al gusano',p1:'hilo',pN:'hilos',ex:'Perforación',g:'un títere gigante',dmg:7,rate:1,count:1,pierce:2,max:5,hat:4,c:'#9a3ab8',sc:1.08,mw:54}
+];
+const HB=id=>HEROES.find(h=>h.id===id);
